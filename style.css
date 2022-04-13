@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'BebasNeue';
+    src: url(fonts/bebasNeue/BebasNeue-Regular.ttf);
+}
+@font-face {
+    font-family: 'Philadelphia';
+    src: url(fonts/philadelphia/The\ Philadelphia\ Story.ttf);
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    font-family: 'BebasNeue', sans-serif ;
+    font-weight: normal;
+    padding: 0;
+    margin: 0;   
+}
+body {
+    padding: 0;
+    margin: 0;
+    background-image: linear-gradient(to right, #5433ff, #20bdff, #a5fecb);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px;
+    margin: 0;
+}
+
+header > h1 {
+    font-size: 3rem;
+    color: #5433ff;
+    box-shadow: -8px -5px 20px 0px #00000057;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+header > p {
+    font-family: 'Philadelphia';
+    font-size: 30px;
+}
+
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+
+    justify-content: center;
+    align-content: center;
+
+    min-height: 80vh;
+}
+
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    color: #ffffff;
+    outline: none;
+    border: 1px solid white;
+    background-color: rgba(32, 188, 255, 0.329);
+    text-align: center;
+}
+.calculator-grid > button:hover {
+    background-color: rgba(245, 245, 220, 0.24);
+}
+
+.span2 {
+    grid-column: span 2;
+}
+
+.resultado {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+
+    background-color: rgba(0, 0, 0, .7);
+    padding: 10px;
+
+    grid-column: 1 / -1; /* pegando da primeira à ultima coluna*/
+
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.resultado .operando-anterior {
+    color: rgba(255, 255, 255, 0.719);
+    font-size: 1.5rem;
+}
+.resultado .operando-atual {
+    color: rgb(255, 255, 255);
+    font-size: 2.5rem;
+}
